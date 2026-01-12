@@ -125,6 +125,84 @@ Options:
   --help, -h           Show help message
 ```
 
+## Copywriting Assistant (New!)
+
+After receiving your review, use the **Copywriting Assistant** to get detailed copywriting suggestions and an AI-likeness rating.
+
+### Usage
+
+```bash
+# Run copywriting analysis on your review report
+python copywriter.py review_report.md
+
+# If article was truncated in report, provide original article file
+python copywriter.py review_report.md --article original_article.txt
+
+# Generate a fully rewritten draft (AI does the rewriting for you!)
+python copywriter.py review_report.md --generate-draft
+
+# Specify custom output files for suggestions and draft
+python copywriter.py review_report.md -o my_suggestions.md --generate-draft --draft-output my_draft.md
+
+# Use a specific model
+python copywriter.py review_report.md --model gemini-2.5-pro
+
+# Complete workflow with draft generation
+python copywriter.py review_report.md --article my_article.txt --generate-draft --model gemini-2.5-pro
+```
+
+### What It Provides
+
+1. **AI Likeness Rating (1-10 scale)**
+   - 1 = Entirely human-written, natural voice
+   - 10 = Obviously AI-generated, formulaic
+   - Identifies specific AI tells in your writing
+
+2. **Specific Line Edits**
+   - Before/after examples with explanations
+   - Concrete suggestions for improvement
+
+3. **Copywriting Recommendations**
+   - Voice and tone adjustments
+   - Engagement improvements
+   - Flow and pacing suggestions
+
+4. **Priority Fixes**
+   - Top 3 most important changes
+
+5. **Fully Rewritten Draft** (with `--generate-draft` flag)
+   - Complete rewritten version of your article
+   - Implements all copywriting suggestions automatically
+   - More natural, human-like writing
+   - Saves you time - let AI do the rewriting!
+
+### Example Workflows
+
+**Workflow 1: Manual Revision (you make the changes)**
+```bash
+# Step 1: Get comprehensive review
+python main.py my_article.md -o review_report.md
+
+# Step 2: Get copywriting suggestions
+python copywriter.py review_report.md -o copywriting.md
+
+# Step 3: Review both reports and manually revise your article
+```
+
+**Workflow 2: AI-Assisted Rewriting (AI does the work!)**
+```bash
+# Step 1: Get comprehensive review
+python main.py my_article.md -o review_report.md
+
+# Step 2: Get copywriting suggestions AND a fully rewritten draft
+python copywriter.py review_report.md --generate-draft
+
+# Step 3: Review the draft (article_draft.md) and suggestions (copywriting_suggestions.md)
+# Use the draft as-is or as a starting point for your final version
+```
+
+---
+
 ## The Review Panel
 
 Your article will be reviewed by 5 different AI personas:
