@@ -1,0 +1,27 @@
+# Existing dependencies (baseline)
+crewai==0.5.0
+google-generativeai>=0.3.0
+tiktoken>=0.5.1
+python-dotenv>=1.0.0
+rich>=13.7.0
+langchain>=0.0.350
+langchain-google-genai>=0.0.6
+
+# Phase 1: Local Analysis Tools
+language-tool-python==2.8.0    # Grammar checking
+textstat==0.7.3                # Readability metrics
+spacy==3.7.2                   # NLP and linguistic analysis
+textblob==0.17.1               # Sentiment analysis
+vaderSentiment==3.3.2          # Sentiment analysis
+pyspellchecker==0.7.2          # Spell checking
+nltk==3.8.1                    # Additional NLP tools
+
+# Coaching Tool: Interactive CLI
+prompt_toolkit>=3.0.0          # Interactive command-line interface
+
+# Phase 4: Semantic Analysis (for future)
+# sentence-transformers>=2.3.0  # Embeddings (uncomment when needed)
+# llmlingua>=0.2.0             # Prompt compression (uncomment when needed)
+
+# Note: After installing, download spaCy model:
+# python -m spacy download en_core_web_sm
